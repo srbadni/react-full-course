@@ -1,5 +1,5 @@
 import reactImg from "./assets/react-core-concepts.png";
-import componentsImg from "./assets/components.png";
+import { CORE_CONCEPTS } from "./data";
 
 const reactDescriptions = ['مقدماتی', 'کلیدی', 'اساسی'];
 
@@ -19,12 +19,12 @@ function Header() {
   </header>)
 }
 
-function CoreConcept(props) {
+function CoreConcept({image, title, description}) {
   return (
     <li>
-      <img src={props.image} alt={props.title} />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
     </li>
   )
 }
@@ -37,13 +37,15 @@ function App() {
         <section id="core-concepts">
           <h2>مفاهیم اصلی</h2>
           <ul>
-            <CoreConcept title="کامپوننت‌ها"
-              description="هر کامپوننت یک قطعهٔ آماده از UI هستش (مثلاً دکمه یا card). با ترکیب این کامپوننت ها UI رو می‌سازید" 
-              image={componentsImg}
-              />
-            <CoreConcept title="Props" />
-            <CoreConcept />
-            <CoreConcept />
+            <CoreConcept {...CORE_CONCEPTS[0]} />
+            <CoreConcept {...CORE_CONCEPTS[1]}
+            />
+            <CoreConcept {...CORE_CONCEPTS[2]}
+            />
+            <CoreConcept title={CORE_CONCEPTS[3].title}
+              description={CORE_CONCEPTS[3].description}
+              image={CORE_CONCEPTS[3].image}
+            />
           </ul>
         </section>
       </main>
