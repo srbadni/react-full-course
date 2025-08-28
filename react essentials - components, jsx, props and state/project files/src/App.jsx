@@ -4,9 +4,10 @@ import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header/Header"
 import CoreConcept from "./components/CoreConcept";
 import TabButton from "./components/TabButton";
+import {EXAMPLES} from "./data";
 
 function App() {
-  const [selectedConcept, setSelectedConcept] = useState("یکی از دکمه ها را انتخاب کنید");
+  const [selectedConcept, setSelectedConcept] = useState("components");
 
   function handleSelect(selectedButton) {
     //selected => components, jsx, props, state
@@ -42,7 +43,15 @@ console.log("کامپوننت App رندر شد")
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          {selectedConcept}
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedConcept].title}</h3>
+            <p>{EXAMPLES[selectedConcept].description}</p>
+            <pre>
+              <code>
+              {EXAMPLES[selectedConcept].code}
+              </code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
