@@ -38,10 +38,10 @@ console.log("کامپوننت App رندر شد")
         <section id="examples">
           <h2>مثال‌ها</h2>
           <menu>
-            <TabButton onSelect={() => handleSelect("components")}>کامپوننت‌ها</TabButton>
-            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
-            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
+            <TabButton isSelected={selectedConcept === "components"} onSelect={() => handleSelect("components")}>کامپوننت‌ها</TabButton>
+            <TabButton isSelected={selectedConcept === "jsx"} onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton isSelected={selectedConcept === "props"} onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton isSelected={selectedConcept === "state"} onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
           <div id="tab-content">
             <h3>{EXAMPLES[selectedConcept].title}</h3>
