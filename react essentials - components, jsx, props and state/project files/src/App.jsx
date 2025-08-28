@@ -24,15 +24,9 @@ console.log("کامپوننت App رندر شد")
         <section id="core-concepts">
           <h2>مفاهیم اصلی</h2>
           <ul>
-            <CoreConcept {...CORE_CONCEPTS[0]} />
-            <CoreConcept {...CORE_CONCEPTS[1]}
-            />
-            <CoreConcept {...CORE_CONCEPTS[2]}
-            />
-            <CoreConcept title={CORE_CONCEPTS[3].title}
-              description={CORE_CONCEPTS[3].description}
-              image={CORE_CONCEPTS[3].image}
-            />
+            {
+              CORE_CONCEPTS.map((conceptItem) => <CoreConcept key={conceptItem.title} {...conceptItem} />)
+            }
           </ul>
         </section>
         <section id="examples">
