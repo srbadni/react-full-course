@@ -1,14 +1,20 @@
+import {useState} from "react";
+
 import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header/Header"
 import CoreConcept from "./components/CoreConcept";
 import TabButton from "./components/TabButton";
 
 function App() {
+  const [selectedConcept, setSelectedConcept] = useState("یکی از دکمه ها را انتخاب کنید");
+
   function handleSelect(selectedButton) {
     //selected => components, jsx, props, state
-    console.log(selectedButton);
-    
+    setSelectedConcept(selectedButton);
+    //console.log(selectedConcept);
 }
+
+console.log("کامپوننت App رندر شد")
 
   return (
     <div>
@@ -36,7 +42,7 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          محتوای داینامیک
+          {selectedConcept}
         </section>
       </main>
     </div>
