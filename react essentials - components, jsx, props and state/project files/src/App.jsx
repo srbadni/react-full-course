@@ -4,8 +4,9 @@ import CoreConcept from "./components/CoreConcept";
 import TabButton from "./components/TabButton";
 
 function App() {
-  function handleSelect() {
-    console.log("چطورید رفقا");
+  function handleSelect(selectedButton) {
+    //selected => components, jsx, props, state
+    console.log(selectedButton);
     
 }
 
@@ -30,10 +31,10 @@ function App() {
         <section id="examples">
           <h2>مثال‌ها</h2>
           <menu>
-            <TabButton onSelect={handleSelect}>کامپوننت‌ها</TabButton>
-            <TabButton onSelect={handleSelect}>JSX</TabButton>
-            <TabButton onSelect={handleSelect}>Props</TabButton>
-            <TabButton onSelect={handleSelect}>State</TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>کامپوننت‌ها</TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
           محتوای داینامیک
         </section>
